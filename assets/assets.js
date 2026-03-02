@@ -40,12 +40,19 @@ import md_controller_image from "./md_controller_image.png";
 import sm_controller_image from "./sm_controller_image.png";
 import jbl_soundbox_image from "./jbl_soundbox_image.png";
 import boy_with_laptop_image from "./boy_with_laptop_image.png";
+import rare_beauty_banner from "./Rare-beauty-banner.jpg";
+import lador_banner from "./Lador-banner.jpg";
+import laneige_banner from "./Laneige-banner.jpg";
+import tir_tir_banner from "./Tir-tir-banner.jpg";
 import checkmark from "./checkmark.png";
 import product_details_page_apple_earphone_image1 from "./product_details_page_apple_earphone_image1.png";
 import product_details_page_apple_earphone_image2 from "./product_details_page_apple_earphone_image2.png";
 import product_details_page_apple_earphone_image3 from "./product_details_page_apple_earphone_image3.png";
 import product_details_page_apple_earphone_image4 from "./product_details_page_apple_earphone_image4.png";
 import product_details_page_apple_earphone_image5 from "./product_details_page_apple_earphone_image5.png";
+import chanel_n5_perfume from "./chanel_n5_perfume.jpg";
+import pilgrim_shampoo from "./pilgrim_shampoo.jpg";
+import retro_matte_lipstick from "./retro_matte_lipstick.jpg";
 
 export const assets = {
   logo,
@@ -90,11 +97,18 @@ export const assets = {
   sm_controller_image,
   jbl_soundbox_image,
   boy_with_laptop_image,
+  rare_beauty_banner,
+  lador_banner,
+  laneige_banner,
+  tir_tir_banner,
   product_details_page_apple_earphone_image1,
   product_details_page_apple_earphone_image2,
   product_details_page_apple_earphone_image3,
   product_details_page_apple_earphone_image4,
   product_details_page_apple_earphone_image5,
+  chanel_n5_perfume,
+  pilgrim_shampoo,
+  retro_matte_lipstick,
   checkmark
 };
 

@@ -6,27 +6,27 @@ const HeaderSlider = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      offer: "Limited Time Offer 30% Off",
+      title: "Timeless Sophistication - Chanel N°5 Perfume is here!",
+      offer: "Premium Fragrance Collection",
       buttonText1: "Buy now",
       buttonText2: "Find more",
-      imgSrc: assets.header_headphone_image,
+      imgSrc: assets.chanel_n5_perfume,
     },
     {
       id: 2,
-      title: "Next-Level Gaming Starts Here - Discover PlayStation 5 Today!",
-      offer: "Hurry up only few lefts!",
+      title: "Australian Secrets - Natural Tea Tree Care for you!",
+      offer: "Exclusive Skincare Deal",
       buttonText1: "Shop Now",
       buttonText2: "Explore Deals",
-      imgSrc: assets.header_playstation_image,
+      imgSrc: assets.pilgrim_shampoo,
     },
     {
       id: 3,
-      title: "Power Meets Elegance - Apple MacBook Pro is Here for you!",
-      offer: "Exclusive Deal 40% Off",
+      title: "Bold & Iconic - Your Perfect Retro Matte Lipstick!",
+      offer: "Limited Edition Colors",
       buttonText1: "Order Now",
       buttonText2: "Learn More",
-      imgSrc: assets.header_macbook_image,
+      imgSrc: assets.retro_matte_lipstick,
     },
   ];
 
@@ -54,26 +54,26 @@ const HeaderSlider = () => {
         {sliderData.map((slide, index) => (
           <div
             key={slide.id}
-            className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#E6E9F2] dark:bg-slate-900 py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full transition-colors"
+            className="flex flex-col-reverse md:flex-row items-center justify-between bg-white dark:bg-slate-900 py-4 md:py-4 md:px-10 px-5 mt-4 rounded-xl min-w-full transition-colors border border-gray-100 dark:border-slate-800 shadow-sm"
           >
-            <div className="md:pl-8 mt-10 md:mt-0">
-              <p className="md:text-base text-primary font-medium pb-1">{slide.offer}</p>
-              <h1 className="max-w-lg md:text-[40px] md:leading-[48px] text-2xl font-semibold text-gray-900 dark:text-gray-100">
+            <div className="md:pl-8 mt-8 md:mt-0">
+              <p className="md:text-base text-primary font-medium pb-1 uppercase tracking-wider">{slide.offer}</p>
+              <h1 className="max-w-lg md:text-[44px] md:leading-[52px] text-2xl font-bold text-gray-900 dark:text-gray-100">
                 {slide.title}
               </h1>
-              <div className="flex items-center mt-4 md:mt-6 ">
-                <button className="md:px-10 px-7 md:py-2.5 py-2 bg-primary hover:bg-primary-hover rounded-full text-white font-medium transition-colors">
+              <div className="flex items-center mt-5 md:mt-8 ">
+                <button className="md:px-10 px-8 md:py-3 py-2 bg-primary hover:bg-primary-hover rounded-full text-white font-semibold text-base transition-colors shadow-lg">
                   {slide.buttonText1}
                 </button>
-                <button className="group flex items-center gap-2 px-6 py-2.5 font-medium text-gray-700 dark:text-gray-300">
+                <button className="group flex items-center gap-2 px-6 py-2 font-medium text-gray-700 dark:text-gray-300 text-base">
                   {slide.buttonText2}
                   <Image className="group-hover:translate-x-1 transition dark:invert" src={assets.arrow_icon} alt="arrow_icon" />
                 </button>
               </div>
             </div>
-            <div className="flex items-center flex-1 justify-center">
+            <div className="flex items-center flex-1 justify-center md:justify-end">
               <Image
-                className="md:w-72 w-48 object-contain"
+                className="md:w-[350px] w-60 object-contain"
                 src={slide.imgSrc}
                 alt={`Slide ${index + 1}`}
               />

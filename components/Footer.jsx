@@ -40,14 +40,14 @@ const Footer = () => {
           <div>
             <h2 className="font-medium text-gray-900 dark:text-gray-100 mb-5">Get in touch</h2>
             <div className="text-sm space-y-2">
-              <p>+91-90999-3457</p>
+              <p>+91-90999-30457</p>
               <p>niyatisompura91@gmail.com</p>
             </div>
           </div>
         </div>
       </div>
       <p className="py-4 text-center text-xs md:text-sm dark:text-gray-500">
-        Copyright 2025 © NiyatiSompura.dev All Right Reserved.
+        Copyright 2026 © NiyatiSompura All Right Reserved.
       </p>
     </footer>
   );
