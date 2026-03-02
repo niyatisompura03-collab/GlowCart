@@ -9,10 +9,7 @@ const Footer = () => {
         <div className="w-4/5">
           <Image className="w-44 md:w-64" src={assets.logo} alt="logo" />
           <p className="mt-6 text-sm">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Welcome to GlowCart – your trusted destination for premium skincare and beauty products from around the world.
           </p>
         </div>
 
@@ -24,7 +21,7 @@ const Footer = () => {
                 <a className="hover:text-primary transition" href="#">Home</a>
               </li>
               <li>
-                <a className="hover:text-primary transition" href="#">About us</a>
+                <a className="hover:text-primary transition" href="/about">About us</a>
               </li>
               <li>
                 <a className="hover:text-primary transition" href="#">Contact us</a>

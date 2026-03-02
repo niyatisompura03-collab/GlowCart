@@ -50,9 +50,11 @@ import product_details_page_apple_earphone_image2 from "./product_details_page_a
 import product_details_page_apple_earphone_image3 from "./product_details_page_apple_earphone_image3.png";
 import product_details_page_apple_earphone_image4 from "./product_details_page_apple_earphone_image4.png";
 import product_details_page_apple_earphone_image5 from "./product_details_page_apple_earphone_image5.png";
-import chanel_n5_perfume from "./chanel_n5_perfume.jpg";
-import pilgrim_shampoo from "./pilgrim_shampoo.jpg";
-import retro_matte_lipstick from "./retro_matte_lipstick.jpg";
+import chanel_n5_perfume from "./chanel_n5_perfume.png";
+import pilgrim_shampoo from "./pilgrim_shampoo.png";
+import retro_matte_lipstick from "./retro_matte_lipstick.png";
+
+import auth_bg from "./auth_bg.png";
 
 export const assets = {
   logo,
@@ -109,7 +111,8 @@ export const assets = {
   chanel_n5_perfume,
   pilgrim_shampoo,
   retro_matte_lipstick,
-  checkmark
+  checkmark,
+  auth_bg
 };
 
 export const BagIcon = () => {

@@ -87,9 +87,16 @@ const Navbar = () => {
             <Image className="w-4 h-4 dark:invert group-hover:scale-110 transition-transform" src={assets.search_icon} alt="search icon" />
           </div>
 
-          <button className="flex items-center gap-2 hover:text-primary transition-all group">
+          <button onClick={() => router.push('/login')} className="flex items-center gap-2 hover:text-primary transition-all group">
             <Image className="w-5 h-5 dark:invert group-hover:rotate-12 transition-transform" src={assets.user_icon} alt="user icon" />
             <span className="hidden lg:inline font-medium text-sm">Account</span>
+          </button>
+
+          <button
+            onClick={() => router.push('/login')}
+            className="text-xs lg:text-sm border border-primary/30 px-4 py-1.5 rounded-full hover:bg-primary/5 transition-all w-fit"
+          >
+            Login
           </button>
 
           {/* Mobile Menu Icon (Placeholder for functionality) */}
