@@ -1,39 +1,49 @@
 import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-
-const products = [
-  {
-    id: 1,
-    image: assets.laneige_banner,
-    title: "Hydration Specialists",
-    description: "Discover Laneige's Korean skincare for ultimate moisture and glow.",
-  },
-  {
-    id: 2,
-    image: assets.lador_banner,
-    title: "Nutritive Hair Care",
-    description: "Rejuvenate your locks with Lador's premium hair oil & treatments.",
-  },
-  {
-    id: 3,
-    image: assets.tir_tir_banner,
-    title: "Flawless Foundation",
-    description: "Achieve the perfect base with TirTir's long-lasting foundation.",
-  },
-];
+import { useAppContext } from "@/context/AppContext";
 
 const FeaturedProduct = () => {
+  const { router } = useAppContext();
+
+  const products = [
+    {
+      id: 1,
+      image: assets.laneige_banner,
+      title: "Hydration Specialists",
+      description: "Discover Laneige's Korean skincare for ultimate moisture and glow.",
+      route: "/laneige"
+    },
+    {
+      id: 2,
+      image: assets.lador_banner,
+      title: "Nutritive Hair Care",
+      description: "Rejuvenate your locks with Lador's premium hair oil & treatments.",
+      route: "/lador"
+    },
+    {
+      id: 3,
+      image: assets.tir_tir_banner,
+      title: "Flawless Foundation",
+      description: "Achieve the perfect base with TirTir's long-lasting foundation.",
+      route: "/tirtir"
+    },
+  ];
+
   return (
     <div className="mt-14">
       <div className="flex flex-col items-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">Featured Korean Brand Collections</h2>
+        <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Featured Korean Brand Collections</h2>
         <div className="w-60 h-1 bg-primary mt-2 rounded-full"></div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-12 md:px-14 px-4">
-        {products.map(({ id, image, title, description }) => (
-          <div key={id} className="relative group overflow-hidden rounded-2xl shadow-lg bg-gray-100 dark:bg-slate-800">
+        {products.map(({ id, image, title, description, route }) => (
+          <div 
+            key={id} 
+            onClick={() => { router.push(route); scrollTo(0,0); }}
+            className="cursor-pointer relative group overflow-hidden rounded-2xl shadow-lg bg-gray-100"
+          >
             <div className="aspect-[4/5] w-full overflow-hidden">
               <Image
                 src={image}

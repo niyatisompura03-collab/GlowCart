@@ -1,5 +1,6 @@
 'use client'
-import { productsDummyData, userDummyData } from "@/assets/assets";
+import { products as allProducts } from "@/assets/productData";
+import { userDummyData } from "@/assets/assets";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -11,7 +12,7 @@ export const useAppContext = () => {
 
 export const AppContextProvider = (props) => {
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY
+    const currency = '₹'
     const router = useRouter()
 
     const [products, setProducts] = useState([])
@@ -20,7 +21,8 @@ export const AppContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({})
 
     const fetchProductData = async () => {
-        setProducts(productsDummyData)
+        console.log("Fetching allProducts:", allProducts);
+        setProducts(allProducts)
     }
 
     const fetchUserData = async () => {

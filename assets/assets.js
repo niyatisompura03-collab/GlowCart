@@ -20,41 +20,39 @@ import heart_icon from "./heart_icon.svg";
 import star_icon from "./star_icon.svg";
 import redirect_icon from "./redirect_icon.svg";
 import star_dull_icon from "./star_dull_icon.svg";
-import header_headphone_image from "./header_headphone_image.png";
-import header_playstation_image from "./header_playstation_image.png";
-import header_macbook_image from "./header_macbook_image.png";
-import macbook_image from "./macbook_image.png";
-import bose_headphone_image from "./bose_headphone_image.png";
-import apple_earphone_image from "./apple_earphone_image.png";
-import samsung_s23phone_image from "./samsung_s23phone_image.png";
-import venu_watch_image from "./venu_watch_image.png";
 import upload_area from "./upload_area.png";
-import cannon_camera_image from "./cannon_camera_image.png";
-import sony_airbuds_image from "./sony_airbuds_image.png";
-import asus_laptop_image from "./asus_laptop_image.png";
-import projector_image from "./projector_image.png";
-import playstation_image from "./playstation_image.png";
-import girl_with_headphone_image from "./girl_with_headphone_image.png";
-import girl_with_earphone_image from "./girl_with_earphone_image.png";
-import md_controller_image from "./md_controller_image.png";
-import sm_controller_image from "./sm_controller_image.png";
-import jbl_soundbox_image from "./jbl_soundbox_image.png";
-import boy_with_laptop_image from "./boy_with_laptop_image.png";
 import rare_beauty_banner from "./Rare-beauty-banner.jpg";
 import lador_banner from "./Lador-banner.jpg";
 import laneige_banner from "./Laneige-banner.jpg";
 import tir_tir_banner from "./Tir-tir-banner.jpg";
 import checkmark from "./checkmark.png";
-import product_details_page_apple_earphone_image1 from "./product_details_page_apple_earphone_image1.png";
-import product_details_page_apple_earphone_image2 from "./product_details_page_apple_earphone_image2.png";
-import product_details_page_apple_earphone_image3 from "./product_details_page_apple_earphone_image3.png";
-import product_details_page_apple_earphone_image4 from "./product_details_page_apple_earphone_image4.png";
-import product_details_page_apple_earphone_image5 from "./product_details_page_apple_earphone_image5.png";
-import chanel_n5_perfume from "./chanel_n5_perfume.png";
-import pilgrim_shampoo from "./pilgrim_shampoo.png";
-import retro_matte_lipstick from "./retro_matte_lipstick.png";
+import chanel_n5_perfume from "./chanel_n5_perfume.jpg";
+import pilgrim_shampoo from "./pilgrim_shampoo.jpg";
+import retro_matte_lipstick from "./retro_matte_lipstick.jpg";
+import bath_bombs from "./bath_bombs.jpg";
+import bellavita_perfume from "./bellavita_perfume.jpg";
+import dot_key_sunscreen from "./dot_key_sunscreen.jpg";
+import dyson_hair_dryer from "./dyson_hair_dryer.jpg";
+import huda_beauty_palette from "./huda_beauty_palette.jpg";
+import loreal_repair_mask from "./loreal_repair_mask.jpg";
+import mac_lipstick from "./mac_lipstick.jpg";
+import mars_nail_paint from "./mars_nail_paint.jpg";
+import pixi_blush from "./pixi_blush.jpg";
+import plum_face_wash from "./plum_face_wash.jpg";
 
 import auth_bg from "./auth_bg.png";
+import laneige_1 from "./laneige_1.jpg";
+import laneige_2 from "./laneige_2.jpg";
+import laneige_3 from "./laneige_3.jpg";
+import lador_2 from "./lador_2.jpg";
+import tirtir_1 from "./tirtir_1.jpg";
+import rare_beauty_1 from "./rare_beauty_1.jpg";
+import rare_beauty_joy from "./rare_beauty_joy.jpg";
+import rare_beauty_luminizer from "./rare_beauty_luminizer.jpg";
+import rare_beauty_brightener from "./rare_beauty_brightener.jpg";
+import rare_beauty_liner from "./rare_beauty_liner.jpg";
+import tirtir_red_cushion from "./tirtir_red_cushion.jpg";
+import laneige_water_mask from "./laneige_water_mask.jpg";
 
 export const assets = {
   logo,
@@ -79,40 +77,38 @@ export const assets = {
   star_icon,
   redirect_icon,
   star_dull_icon,
-  header_headphone_image,
-  header_playstation_image,
-  header_macbook_image,
-  macbook_image,
-  bose_headphone_image,
-  apple_earphone_image,
-  samsung_s23phone_image,
-  venu_watch_image,
   upload_area,
-  cannon_camera_image,
-  sony_airbuds_image,
-  asus_laptop_image,
-  projector_image,
-  playstation_image,
-  girl_with_headphone_image,
-  girl_with_earphone_image,
-  md_controller_image,
-  sm_controller_image,
-  jbl_soundbox_image,
-  boy_with_laptop_image,
   rare_beauty_banner,
   lador_banner,
   laneige_banner,
   tir_tir_banner,
-  product_details_page_apple_earphone_image1,
-  product_details_page_apple_earphone_image2,
-  product_details_page_apple_earphone_image3,
-  product_details_page_apple_earphone_image4,
-  product_details_page_apple_earphone_image5,
   chanel_n5_perfume,
   pilgrim_shampoo,
   retro_matte_lipstick,
+  bath_bombs,
+  bellavita_perfume,
+  dot_key_sunscreen,
+  dyson_hair_dryer,
+  huda_beauty_palette,
+  loreal_repair_mask,
+  mac_lipstick,
+  mars_nail_paint,
+  pixi_blush,
+  plum_face_wash,
   checkmark,
-  auth_bg
+  auth_bg,
+  laneige_1,
+  laneige_2,
+  laneige_3,
+  lador_2,
+  tirtir_1,
+  rare_beauty_1,
+  rare_beauty_joy,
+  rare_beauty_luminizer,
+  rare_beauty_brightener,
+  rare_beauty_liner,
+  tirtir_red_cushion,
+  laneige_water_mask
 };
 
 export const BagIcon = () => {
@@ -149,145 +145,142 @@ export const HomeIcon = () => (
 
 export const productsDummyData = [
   {
-    "_id": "67a1f4e43f34a77b6dde9144",
+    "_id": "67a1f4e43f34a77b6dde9141",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Apple AirPods Pro 2nd gen",
-    "description": "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience.",
-    "price": 499.99,
-    "offerPrice": 399.99,
+    "name": "BELLAVITA Women's Premium Perfume",
+    "description": "A curate collection of four exquisite, long-lasting eau de parfums, offering a range of captivating scents from fruity-floral to romantic rose, sophisticated blend, and glamorous allure. Perfect for gifting or discovering your signature fragrance.",
+    "price": 1099,
+    "offerPrice": 599,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/k4dafzhwhgcn5tnoylrw.webp",
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/j212frakb8hdrhvhajhg.webp",
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/imwuugqxsajuwqpkegb5.webp",
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/k1oqaslw5tb3ebw01vvj.webp"
+      bellavita_perfume
     ],
-    "category": "Earphone",
+    "category": "Perfume",
     "date": 1738667236865,
     "__v": 0
   },
   {
-    "_id": "67a1f52e3f34a77b6dde914a",
+    "_id": "67a1f4e43f34a77b6dde9142",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Bose QuietComfort 45",
-    "description": "The Bose QuietComfort 45 headphones are engineered for exceptional sound quality and unparalleled noise cancellation. With a 24-hour battery life and comfortable, lightweight design, these headphones deliver premium audio for any environment. Whether on a flight, in the office, or at home, the Bose QC45 blocks out distractions, offering an immersive listening experience.",
-    "price": 429.99,
-    "offerPrice": 329.99,
+    "name": "Dot & Key Watermelon Sunscreen",
+    "description": "A refreshing, water-light sunscreen gel formulated with watermelon extracts and hyaluronic acid. It provides broad-spectrum UVA & UVB protection while instantly cooling and hydrating skin without any white cast or greasiness.",
+    "price": 495,
+    "offerPrice": 399,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/m16coelz8ivkk9f0nwrz.webp"
+      dot_key_sunscreen
     ],
-    "category": "Headphone",
+    "category": "Skincare",
     "date": 1738667310300,
     "__v": 0
   },
   {
-    "_id": "67a1f5663f34a77b6dde914c",
+    "_id": "67a1f4e43f34a77b6dde9143",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Samsung Galaxy S23",
-    "description": "The Samsung Galaxy S23 offers an all-encompassing mobile experience with its advanced AMOLED display, offering vibrant visuals and smooth interactions. Equipped with top-of-the-line fitness tracking features and cutting-edge technology, this phone delivers outstanding performance. With powerful hardware, a sleek design, and long battery life, the S23 is perfect for those who demand the best in mobile innovation.",
-    "price": 899.99,
-    "offerPrice": 799.99,
+    "name": "Dyson Supersonic Hair Dryer",
+    "description": "The Dyson Supersonic hair dryer features innovative technology to protect hair from extreme heat damage. Its powerful digital motor is engineered for fast drying, while intelligent heat control helps prevent extreme heat and protects your hair's natural shine.",
+    "price": 39900,
+    "offerPrice": 34900,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/xjd4eprpwqs7odbera1w.webp"
+      dyson_hair_dryer
     ],
-    "category": "Smartphone",
+    "category": "Beauty",
     "date": 1738667366224,
     "__v": 0
   },
   {
-    "_id": "67a1f5993f34a77b6dde914e",
+    "_id": "67a1f4e43f34a77b6dde9144",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Garmin Venu 2",
-    "description": "The Garmin Venu 2 smartwatch blends advanced fitness tracking with sophisticated design, offering a wealth of features such as heart rate monitoring, GPS, and sleep tracking. Built with a 24-hour battery life, this watch is ideal for fitness enthusiasts and anyone looking to enhance their daily lifestyle. With a stunning AMOLED display and customizable watch faces, the Venu 2 combines technology with style seamlessly.",
-    "price": 399.99,
-    "offerPrice": 349.99,
+    "name": "Skinourish Pedicure Bath Bombs",
+    "description": "Transform your home foot spa with these vibrant, effervescent bath bombs. Infused with essential oils and skin-softening minerals, they dissolve quickly to soothe tired feet and prep your skin for a perfect pedicure.",
+    "price": 899,
+    "offerPrice": 450,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/hdfi4u3fmprazpnrnaga.webp"
+      bath_bombs
     ],
-    "category": "Earphone",
+    "category": "Skincare",
     "date": 1738667417511,
     "__v": 0
   },
   {
-    "_id": "67a1f5ef3f34a77b6dde9150",
+    "_id": "67a1f4e43f34a77b6dde9145",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "PlayStation 5",
-    "description": "The PlayStation 5 takes gaming to the next level with ultra-HD graphics, a powerful 825GB SSD, and ray tracing technology for realistic visuals. Whether you're into high-action games or immersive storytelling, the PS5 delivers fast loading times, seamless gameplay, and stunning visuals. It's a must-have for any serious gamer looking for the ultimate gaming experience.",
-    "price": 599.99,
-    "offerPrice": 499.99,
+    "name": "Huda Girl Rose Gold Palette",
+    "description": "Get the best of both worlds with this eyeshadow combo. Featuring the Rose Gold Remastered palette for bold, metallic looks and the Nude Edition for soft, everyday elegance. Highly pigmented and easy to blend.",
+    "price": 1499,
+    "offerPrice": 799,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/dd3l13vfoartrgbvkkh5.webp"
+      huda_beauty_palette
     ],
-    "category": "Accessories",
+    "category": "Beauty",
     "date": 1738667503075,
     "__v": 0
   },
   {
-    "_id": "67a1f70c3f34a77b6dde9156",
+    "_id": "67a1f4e43f34a77b6dde9146",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Canon EOS R5",
-    "description": "The Canon EOS R5 is a game-changing mirrorless camera with a 45MP full-frame sensor, offering ultra-high resolution and the ability to shoot 8K video. Whether you're capturing professional-quality stills or cinematic video footage, this camera delivers exceptional clarity, speed, and color accuracy. With advanced autofocus and in-body stabilization, the R5 is ideal for photographers and videographers alike.",
-    "price": 4199.99,
-    "offerPrice": 3899.99,
+    "name": "L’Oréal Absolut Repair Mask",
+    "description": "A professional-grade hair mask designed to instantly resurface dry and damaged hair. Infused with Gold Quinoa and Wheat Protein, it reduces hair surface damage by 77% and leaves hair 7x shinier without weighing it down.",
+    "price": 950,
+    "offerPrice": 855,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/r5h370zuujvrw461c6wy.webp"
+      loreal_repair_mask
     ],
-    "category": "Camera",
+    "category": "Skincare",
     "date": 1738667788883,
     "__v": 0
   },
   {
-    "_id": "67a1f7c93f34a77b6dde915a",
+    "_id": "67a1f4e43f34a77b6dde9147",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "MacBook Pro 16",
-    "description": "The MacBook Pro 16, powered by Apple's M2 Pro chip, offers outstanding performance with 16GB RAM and a 512GB SSD. Whether you're editing high-resolution video, developing software, or multitasking with ease, this laptop can handle the toughest tasks. It features a stunning Retina display with True Tone technology, making it a top choice for professionals in creative industries or anyone who demands premium performance in a portable form.",
-    "price": 2799.99,
-    "offerPrice": 2499.99,
+    "name": "M.A.C Studio Fix Fluid Foundation",
+    "description": "A modern foundation that combines a natural matte finish and medium-to-full buildable coverage with broad-spectrum SPF 15 protection. This iconic formula stays put for 24 hours while controlling oil and shine.",
+    "price": 3300,
+    "offerPrice": 2970,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/rzri7kytphxalrm9rubd.webp"
+      mac_lipstick
     ],
-    "category": "Laptop",
+    "category": "Beauty",
     "date": 1738667977644,
     "__v": 0
   },
   {
-    "_id": "67a1f8363f34a77b6dde915c",
+    "_id": "67a1f4e43f34a77b6dde9148",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Sony WF-1000XM5",
-    "description": "Sony WF-1000XM5 true wireless earbuds deliver immersive sound with Hi-Res Audio and advanced noise cancellation technology. Designed for comfort and quality, they provide a stable, snug fit for a secure listening experience. Whether you're working out or traveling, these earbuds will keep you connected with the world around you while enjoying rich, clear sound.",
-    "price": 349.99,
-    "offerPrice": 299.99,
+    "name": "MARS Cosmic Hues Nail Paint",
+    "description": "Experience out-of-this-world color with MARS Cosmic Hues. This nail enamel provides a smooth, high-shine finish with a long-lasting formula that resists chipping and fading.",
+    "price": 199,
+    "offerPrice": 149,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/e3zjaupyumdkladmytke.webp"
+      mars_nail_paint
     ],
-    "category": "Earphone",
+    "category": "Beauty",
     "date": 1738668086331,
     "__v": 0
   },
   {
-    "_id": "67a1f85e3f34a77b6dde915e",
+    "_id": "67a1f4e43f34a77b6dde9149",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "Samsung Projector 4k",
-    "description": "The Samsung 4K Projector offers an immersive cinematic experience with ultra-high-definition visuals and realistic color accuracy. Equipped with a built-in speaker, it delivers rich sound quality to complement its stunning 4K resolution. Perfect for movie nights, gaming, or presentations, this projector is the ultimate choice for creating an at-home theater experience or professional setting.",
-    "price": 1699.99,
-    "offerPrice": 1499.99,
+    "name": "Pixi On-the-Glow Blush Stick",
+    "description": "A travel-friendly, solid moisturizer tinted with a beautiful wash of color. Formulated with Ginseng, Aloe Vera, and a unique blend of Fruit Extracts, this provides a natural glow while hydrating the skin.",
+    "price": 1950,
+    "offerPrice": 1800,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/qqdcly8a8vkyciy9g0bw.webp"
+      pixi_blush
     ],
-    "category": "Accessories",
+    "category": "Beauty",
     "date": 1738668126660,
     "__v": 0
   },
   {
-    "_id": "67a1fa4b3f34a77b6dde9166",
+    "_id": "67a1f4e43f34a77b6dde914a",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "name": "ASUS ROG Zephyrus G16",
-    "description": "The ASUS ROG Zephyrus G16 gaming laptop is powered by the Intel Core i9 processor and features an RTX 4070 GPU, delivering top-tier gaming and performance. With 16GB of RAM and a 1TB SSD, this laptop is designed for gamers who demand extreme power, speed, and storage. Equipped with a stunning 16-inch display, it's built to handle the most demanding titles and applications with ease.",
-    "price": 2199.99,
-    "offerPrice": 1999.99,
+    "name": "Plum Rice Niacinamide Face Wash",
+    "description": "A gentle, non-drying cleanser that removes 99% of impurities while brightening the skin. Fermented rice water and 2% Niacinamide work together to clear blemishes and improve skin texture.",
+    "price": 299,
+    "offerPrice": 249,
     "image": [
-      "https://raw.githubusercontent.com/avinashdm/gs-images/main/GlowCart/wig1urqgnkeyp4t2rtso.webp"
+      plum_face_wash
     ],
-    "category": "Laptop",
+    "category": "Skincare",
     "date": 1738668619198,
     "__v": 0
   }
@@ -299,7 +292,6 @@ export const userDummyData = {
   "email": "admin@example.com",
   "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ycnlnUnFiUDBYT2dEZ2h1ZmRXcGlpdWV5OXoiLCJyaWQiOiJ1c2VyXzJzWkZIUzFVSUl5c0p5RFZ6Q3BRaFVoVElodyJ9",
   "cartItems": {
-    // "67a1f4e43f34a77b6dde9144": 3
   },
   "__v": 0
 }
@@ -310,28 +302,12 @@ export const orderDummyData = [
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "items": [
       {
-        "product": {
-          "_id": "67a1f4e43f34a77b6dde9144",
-          "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-          "name": "Apple AirPods Pro",
-          "description": "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience.",
-          "price": 499.99,
-          "offerPrice": 399.99,
-          "image": [
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667237/lrllaprpos2pnp5c9pyy.png",
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667238/jqotgy2rvm36vfjv6lxl.png",
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667238/niw7tqxvjsxt7wcehxeo.png",
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667237/h8cq4x9cfzqzwaiarvpk.png"
-          ],
-          "category": "Earphone",
-          "date": 1738667236865,
-          "__v": 0
-        },
+        "product": productsDummyData[0],
         "quantity": 1,
         "_id": "67a20934b3db72db5cc77b2c"
       }
     ],
-    "amount": 406.99,
+    "amount": 599,
     "address": {
       "_id": "67a1e4233f34a77b6dde9055",
       "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
@@ -352,25 +328,12 @@ export const orderDummyData = [
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "items": [
       {
-        "product": {
-          "_id": "67a1f52e3f34a77b6dde914a",
-          "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-          "name": "Bose QuietComfort 45",
-          "description": "The Bose QuietComfort 45 headphones are engineered for exceptional sound quality and unparalleled noise cancellation. With a 24-hour battery life and comfortable, lightweight design, these headphones deliver premium audio for any environment. Whether on a flight, in the office, or at home, the Bose QC45 blocks out distractions, offering an immersive listening experience.",
-          "price": 429.99,
-          "offerPrice": 329.99,
-          "image": [
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667311/m16coelz8ivkk9f0nwrz.png"
-          ],
-          "category": "Headphone",
-          "date": 1738667310300,
-          "__v": 0
-        },
+        "product": productsDummyData[1],
         "quantity": 1,
         "_id": "67a20949b3db72db5cc77b2f"
       }
     ],
-    "amount": 335.99,
+    "amount": 399,
     "address": {
       "_id": "67a1e4233f34a77b6dde9055",
       "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
@@ -384,48 +347,6 @@ export const orderDummyData = [
     },
     "status": "Order Placed",
     "date": 1738672448031,
-    "__v": 0
-  },
-  {
-    "_id": "67a209bab3db72db5cc77b34",
-    "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "items": [
-      {
-        "product": {
-          "_id": "67a1f4e43f34a77b6dde9144",
-          "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-          "name": "Apple AirPods Pro",
-          "description": "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience.",
-          "price": 499.99,
-          "offerPrice": 399.99,
-          "image": [
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667237/lrllaprpos2pnp5c9pyy.png",
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667238/jqotgy2rvm36vfjv6lxl.png",
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667238/niw7tqxvjsxt7wcehxeo.png",
-            "https://res.cloudinary.com/djbvf02yt/image/upload/v1738667237/h8cq4x9cfzqzwaiarvpk.png"
-          ],
-          "category": "Earphone",
-          "date": 1738667236865,
-          "__v": 0
-        },
-        "quantity": 1,
-        "_id": "67a209bab3db72db5cc77b35"
-      }
-    ],
-    "amount": 406.99,
-    "address": {
-      "_id": "67a1e4233f34a77b6dde9055",
-      "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-      "fullName": "GreatStack",
-      "phoneNumber": "0123456789",
-      "pincode": 654321,
-      "area": "Main Road , 123 Street, G Block",
-      "city": "City",
-      "state": "State",
-      "__v": 0
-    },
-    "status": "Order Placed",
-    "date": 1738672560698,
     "__v": 0
   }
 ]

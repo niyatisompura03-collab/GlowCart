@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- This is the parent sitemap linking to additional sitemaps for products, collections and pages as shown below. The sitemap can not be edited manually, but is kept up to date in real time. -->
+  <sitemap>
+    <loc>https://www.rarebeauty.com/sitemap_products_1.xml?from=5132586909831&amp;to=8428016959623</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.rarebeauty.com/sitemap_pages_1.xml?from=58494582919&amp;to=114666897543</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.rarebeauty.com/sitemap_collections_1.xml?from=191802966151&amp;to=311809409159</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.rarebeauty.com/sitemap_blogs_1.xml</loc>
+  </sitemap>
+</sitemapindex>

@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${outfit.className} antialiased transition-colors duration-300`} >
+      <body className={`${outfit.className} antialiased`} >
         <Toaster />
         <AppContextProvider>
           {children}
