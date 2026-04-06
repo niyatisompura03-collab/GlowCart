@@ -37,7 +37,7 @@ const Product = () => {
                         <Image
                             src={mainImage || productData.image[0]}
                             alt="alt"
-                            className="w-full h-auto object-cover mix-blend-multiply"
+                            className="w-full h-auto object-cover"
                             width={1280}
                             height={720}
                         />
@@ -53,7 +53,7 @@ const Product = () => {
                                 <Image
                                     src={image}
                                     alt="alt"
-                                    className="w-full h-auto object-cover mix-blend-multiply"
+                                    className="w-full h-auto object-cover"
                                     width={1280}
                                     height={720}
                                 />

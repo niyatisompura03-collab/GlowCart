@@ -53,7 +53,7 @@ const Cart = () => {
                             <Image
                               src={product.image[0]}
                               alt={product.name}
-                              className="w-16 h-auto object-cover mix-blend-multiply"
+                              className="w-16 h-auto object-cover"
                               width={1280}
                               height={720}
                             />
