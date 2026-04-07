@@ -1,7 +1,7 @@
 // src/inngest/client.ts
 import { Inngest } from "inngest";
 import connectDB from "./db";
-import { User } from "@clerk/nextjs/dist/types/server";
+import { currentUser } from "@clerk/nextjs/server";
 
 export const inngest = new Inngest({ id: "glowcart-next" });
 
@@ -21,7 +21,7 @@ export const syncUserCreation = inngest.createFunction(
             imageUrl : image_url
         }
         await connectDB()
-        await User.create(userData)
+        await currentUser.create(userData)
     }
 )
 
@@ -41,7 +41,7 @@ export const syncUserUpdation = inngest.createFunction(
             imageUrl : image_url
         }
         await connectDB()
-        await User.findByIdAndUpdate(id, userData)
+        await currentUser.findByIdAndUpdate(id, userData)
     }
 )
 
@@ -54,6 +54,6 @@ export const syncUserDeletion = inngest.createFunction(
     async ({event}) =>{
         const { id } = event.data
         await connectDB()
-        await User.findByIdAndDelete(id)
+        await currentUser.findByIdAndDelete(id)
     }
 )
