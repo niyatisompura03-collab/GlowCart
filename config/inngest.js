@@ -8,7 +8,7 @@ export const inngest = new Inngest({ id: "glowcart-next" });
 /* ================= CREATE USER ================= */
 export const syncUserCreation = inngest.createFunction(
   {
-    id: "sync-user-from-clerk",
+    id: "sync-user-from-clerk-v2",
     triggers: { event: "clerk/user.created" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -29,7 +29,7 @@ export const syncUserCreation = inngest.createFunction(
 /* ================= UPDATE USER ================= */
 export const syncUserUpdation = inngest.createFunction(
   {
-    id: "update-user-from-clerk",
+    id: "update-user-from-clerk-v2",
     triggers: { event: "clerk/user.updated" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -49,7 +49,7 @@ export const syncUserUpdation = inngest.createFunction(
 /* ================= DELETE USER ================= */
 export const syncUserDeletion = inngest.createFunction(
   {
-    id: "delete-user-with-clerk",
+    id: "delete-user-with-clerk-v2",
     triggers: { event: "clerk/user.deleted" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -63,7 +63,7 @@ export const syncUserDeletion = inngest.createFunction(
 /* ================= CREATE ORDER ================= */
 export const createUserOrder = inngest.createFunction(
   {
-    id: "create-user-order",
+    id: "create-user-order-v2",
     triggers: { event: "order/created" }, // ✅ FIXED
     batchEvents: {
       maxSize: 5,
