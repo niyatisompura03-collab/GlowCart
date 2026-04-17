@@ -8,10 +8,8 @@ export const inngest = new Inngest({ id: "glowcart-next" });
 
 /* ================= CREATE USER ================= */
 export const syncUserCreation = inngest.createFunction(
-  {
-    id: "sync-user-from-clerk",
-    triggers: { event: "clerk/user.created" }, // ✅ correct
-  },
+  { id: "sync-user-from-clerk" },
+  { event: "clerk/user.created" },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
 
@@ -29,10 +27,8 @@ export const syncUserCreation = inngest.createFunction(
 
 /* ================= UPDATE USER ================= */
 export const syncUserUpdation = inngest.createFunction(
-  {
-    id: "update-user-from-clerk",
-    triggers: { event: "clerk/user.updated" }, // ✅ correct
-  },
+  { id: "update-user-from-clerk" },
+  { event: "clerk/user.updated" },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
 
@@ -49,10 +45,8 @@ export const syncUserUpdation = inngest.createFunction(
 
 /* ================= DELETE USER ================= */
 export const syncUserDeletion = inngest.createFunction(
-  {
-    id: "delete-user-with-clerk",
-    triggers: { event: "clerk/user.deleted" }, // ✅ correct
-  },
+  { id: "delete-user-with-clerk" },
+  { event: "clerk/user.deleted" },
   async ({ event }) => {
     const { id } = event.data;
 
@@ -67,12 +61,10 @@ export const createUserOrder = inngest.createFunction(
     id: "create-user-order",
     batchEvents: {
       maxSize: 5,
-      maxWait: "5s",
-    },
-    triggers: [
-      { event: 'order/created' }
-    ]
+      maxWait: "1m",
+    }
   },
+  { event: 'order/created' },
   async ({ events }) => {
     const orders = events.map((event) => {
       
