@@ -1,8 +1,7 @@
 import { Inngest } from "inngest";
 import connectDB from "./db";
-import User from "@/models/user"; // ✅ your mongoose model
+import User from "@/models/user";
 import Order from "@/models/order";
-
 
 export const inngest = new Inngest({ id: "glowcart-next" });
 
@@ -10,7 +9,7 @@ export const inngest = new Inngest({ id: "glowcart-next" });
 export const syncUserCreation = inngest.createFunction(
   {
     id: "sync-user-from-clerk",
-    event: "clerk/user.created",
+    triggers: { event: "clerk/user.created" }, // ✅ FIXED
   },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
@@ -23,7 +22,7 @@ export const syncUserCreation = inngest.createFunction(
     };
 
     await connectDB();
-    await User.create(userData); // ✅ correct
+    await User.create(userData);
   }
 );
 
@@ -31,7 +30,7 @@ export const syncUserCreation = inngest.createFunction(
 export const syncUserUpdation = inngest.createFunction(
   {
     id: "update-user-from-clerk",
-    event: "clerk/user.updated",
+    triggers: { event: "clerk/user.updated" }, // ✅ FIXED
   },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
@@ -43,7 +42,7 @@ export const syncUserUpdation = inngest.createFunction(
     };
 
     await connectDB();
-    await User.findByIdAndUpdate(id, userData); // ✅ correct
+    await User.findByIdAndUpdate(id, userData);
   }
 );
 
@@ -51,40 +50,38 @@ export const syncUserUpdation = inngest.createFunction(
 export const syncUserDeletion = inngest.createFunction(
   {
     id: "delete-user-with-clerk",
-    event: "clerk/user.deleted",
+    triggers: { event: "clerk/user.deleted" }, // ✅ FIXED
   },
   async ({ event }) => {
     const { id } = event.data;
 
     await connectDB();
-    await User.findByIdAndDelete(id); // ✅ correct
+    await User.findByIdAndDelete(id);
   }
 );
 
-// Inngest Function to create user's order in database
+/* ================= CREATE ORDER ================= */
 export const createUserOrder = inngest.createFunction(
   {
     id: "create-user-order",
+    triggers: { event: "order/created" }, // ✅ FIXED
     batchEvents: {
       maxSize: 5,
-      maxWait: "5s",
+      maxWait: "5s", // ✅ VALID duration
     },
-    event: 'order/created'
   },
   async ({ events }) => {
-    const orders = events.map((event) => {
-      
-      return {userId: event.data.userId,
-              items: event.data.items, 
-              amount: event.data.amount, 
-              address: event.data.address, 
-              date: event.data.date
-            }
-    })
+    const orders = events.map((event) => ({
+      userId: event.data.userId,
+      items: event.data.items,
+      amount: event.data.amount,
+      address: event.data.address,
+      date: event.data.date,
+    }));
 
-    await connectDB()
-    await Order.insertMany(orders) // ✅ correct
+    await connectDB();
+    await Order.insertMany(orders);
 
-    return {success: true, processed: orders.length};
+    return { success: true, processed: orders.length };
   }
 );
