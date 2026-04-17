@@ -1,6 +1,8 @@
 import { Inngest } from "inngest";
 import connectDB from "./db";
 import User from "@/models/user"; // ✅ your mongoose model
+import Order from "@/models/order";
+
 
 export const inngest = new Inngest({ id: "glowcart-next" });
 
@@ -66,10 +68,12 @@ export const createUserOrder = inngest.createFunction(
     batchEvents: {
       maxSize: 25,
       maxWait: "5s",
-    }
+    },
+    triggers: [
+      { event: 'order/created' }
+    ]
   },
-  {event: 'order/created'},
-  async ({ event }) => {
+  async ({ events }) => {
     const orders = events.map((event) => {
       
       return {userId: event.data.userId,
