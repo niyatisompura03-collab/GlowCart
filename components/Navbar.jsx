@@ -6,6 +6,7 @@ import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 
+
   const Navbar = () => {
   const { isSeller, router } = useAppContext();
   const { user } = useUser();

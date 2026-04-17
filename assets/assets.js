@@ -22,7 +22,7 @@ import redirect_icon from "./redirect_icon.svg";
 import star_dull_icon from "./star_dull_icon.svg";
 import upload_area from "./upload_area.png";
 import rare_beauty_banner from "./Rare-beauty-banner.jpg";
-import lador_banner from "./Lador-banner.png";
+import lador_banner from "./lador-banner.jpg";
 import laneige_banner from "./Laneige-banner.jpg";
 import tir_tir_banner from "./Tir-tir-banner.jpg";
 import checkmark from "./checkmark.png";
