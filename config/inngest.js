@@ -3,7 +3,10 @@ import connectDB from "./db";
 import User from "@/models/user";
 import Order from "@/models/order";
 
-export const inngest = new Inngest({ id: "glowcart-next" });
+export const inngest = new Inngest({
+  id: "glowcart-next",
+  name: "GlowCart",
+});
 
 /* ================= CREATE USER ================= */
 export const syncUserCreation = inngest.createFunction(
