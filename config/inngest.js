@@ -67,20 +67,20 @@ export const syncUserDeletion = inngest.createFunction(
 export const createUserOrder = inngest.createFunction(
   {
     id: "create-user-order-clean",
-    triggers: { event: "order/created" }, // ✅ FIXED
+    triggers: [{ event: "order/created" }], // Changed to array for better compatibility
   },
-  async ({ events }) => {
-    const orders = events.map((event) => ({
-      userId: event.data.userId,
-      items: event.data.items,
-      amount: event.data.amount,
-      address: event.data.address,
-      date: event.data.date,
-    }));
+  async ({ event }) => {
+    const { userId, items, amount, address, date } = event.data;
 
     await connectDB();
-    await Order.insertMany(orders);
+    await Order.create({
+      userId,
+      items,
+      amount,
+      address,
+      date,
+    });
 
-    return { success: true, processed: orders.length };
+    return { success: true };
   }
 );
