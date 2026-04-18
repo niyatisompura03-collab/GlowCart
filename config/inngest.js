@@ -11,7 +11,7 @@ export const inngest = new Inngest({
 /* ================= CREATE USER ================= */
 export const syncUserCreation = inngest.createFunction(
   {
-    id: "sync-user-from-clerk-v2",
+    id: "sync-user-from-clerk-v3",
     triggers: { event: "clerk/user.created" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -32,7 +32,7 @@ export const syncUserCreation = inngest.createFunction(
 /* ================= UPDATE USER ================= */
 export const syncUserUpdation = inngest.createFunction(
   {
-    id: "update-user-from-clerk-v2",
+    id: "update-user-from-clerk-v3",
     triggers: { event: "clerk/user.updated" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -52,7 +52,7 @@ export const syncUserUpdation = inngest.createFunction(
 /* ================= DELETE USER ================= */
 export const syncUserDeletion = inngest.createFunction(
   {
-    id: "delete-user-with-clerk-v2",
+    id: "delete-user-with-clerk-v3",
     triggers: { event: "clerk/user.deleted" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -66,7 +66,7 @@ export const syncUserDeletion = inngest.createFunction(
 /* ================= CREATE ORDER ================= */
 export const createUserOrder = inngest.createFunction(
   {
-    id: "create-user-order-v2",
+    id: "create-user-order-v3",
     triggers: { event: "order/created" }, // ✅ FIXED
     batchEvents: {
       maxSize: 5,
