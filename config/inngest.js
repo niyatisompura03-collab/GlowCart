@@ -11,7 +11,7 @@ export const inngest = new Inngest({
 /* ================= CREATE USER ================= */
 export const syncUserCreation = inngest.createFunction(
   {
-    id: "sync-user-from-clerk-v3",
+    id: "sync-user-from-clerk-final",
     triggers: { event: "clerk/user.created" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -32,7 +32,7 @@ export const syncUserCreation = inngest.createFunction(
 /* ================= UPDATE USER ================= */
 export const syncUserUpdation = inngest.createFunction(
   {
-    id: "update-user-from-clerk-v3",
+    id: "update-user-from-clerk-final",
     triggers: { event: "clerk/user.updated" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -52,7 +52,7 @@ export const syncUserUpdation = inngest.createFunction(
 /* ================= DELETE USER ================= */
 export const syncUserDeletion = inngest.createFunction(
   {
-    id: "delete-user-with-clerk-v3",
+    id: "delete-user-with-clerk-final",
     triggers: { event: "clerk/user.deleted" }, // ✅ FIXED
   },
   async ({ event }) => {
@@ -66,12 +66,8 @@ export const syncUserDeletion = inngest.createFunction(
 /* ================= CREATE ORDER ================= */
 export const createUserOrder = inngest.createFunction(
   {
-    id: "create-user-order-v3",
+    id: "create-user-order-clean",
     triggers: { event: "order/created" }, // ✅ FIXED
-    batchEvents: {
-      maxSize: 5,
-      maxWait: "5s", // ✅ VALID duration
-    },
   },
   async ({ events }) => {
     const orders = events.map((event) => ({
