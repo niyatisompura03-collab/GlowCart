@@ -4,7 +4,7 @@ import User from "@/models/user";
 import Order from "@/models/order";
 
 export const inngest = new Inngest({
-  id: "glowcart-next",
+  id: "glowcart-next-v2",
   name: "GlowCart",
 });
 
