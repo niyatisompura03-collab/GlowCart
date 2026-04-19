@@ -71,7 +71,6 @@ const Navbar = () => {
         </div>
         <Image onClick={() => router.push('/')} className='w-40 lg:w-56 cursor-pointer' src={assets.logo} alt="" />
       </div>
-      <button onClick={() => router.push('/login')} className='bg-primary text-white px-5 py-2 sm:px-7 sm:py-2 rounded-full text-xs sm:text-sm hover:bg-primary/90 transition-colors shadow-lg active:scale-95'>Logout</button>
     </div>
   )
 }
