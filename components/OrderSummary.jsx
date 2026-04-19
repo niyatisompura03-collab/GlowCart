@@ -41,39 +41,89 @@ const OrderSummary = () => {
     setIsDropdownOpen(false);
   };
 
+  const initPay = async (order, cartItemsArray) => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+
+    script.onload = () => {
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        name: 'Order Payment',
+        description: 'Payment for your order',
+        order_id: order.id,
+        handler: async (response) => {
+          try {
+            const token = await getToken();
+            const { data } = await axios.post('/api/order/verify', {
+              ...response,
+              address: selectedAddress._id,
+              items: cartItemsArray,
+              amount: order.amount / 100
+            }, {
+              headers: { Authorization: `Bearer ${token}` }
+            });
+
+            if (data.success) {
+              toast.success(data.message);
+              setCartItems({});
+              router.push('/order-placed');
+            } else {
+              toast.error(data.message);
+            }
+          } catch (error) {
+            toast.error(error.message);
+          }
+        },
+        prefill: {
+          name: user.fullName,
+          email: user.emailAddresses[0].emailAddress,
+        },
+        theme: {
+          color: '#3399cc'
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    };
+
+    document.body.appendChild(script);
+  };
+
   const createOrder = async () => {
-      try {
-        
-        if(!selectedAddress){
-            return toast.error("Please select an address")
-        }
+    try {
 
-        let cartItemsArray = Object.keys(cartItems).map((key) => ({product:key, quantity: cartItems[key]}))
-        cartItemsArray = cartItemsArray.filter(item => item.quantity > 0)
-
-        if(cartItems.length === 0){
-          return toast.error('Cart is empty')
-        }
-
-        const token = await getToken()
-        const {data} = await axios.post('/api/order/create', {
-          address: selectedAddress._id,
-          items: cartItemsArray
-        }, {
-          headers: {Authorization: `Bearer ${token}`}
-        }) 
-
-        if(data.success){
-          toast.success(data.message)
-          setCartItems({})
-          router.push('/order-placed')
-        } else{
-          toast.error(data.message)
-        }
-
-      } catch (error) {
-        toast.error(error.message)
+      if (!selectedAddress) {
+        return toast.error("Please select an address")
       }
+
+      let cartItemsArray = Object.keys(cartItems).map((key) => ({ product: key, quantity: cartItems[key] }))
+      cartItemsArray = cartItemsArray.filter(item => item.quantity > 0)
+
+      if (cartItemsArray.length === 0) {
+        return toast.error('Cart is empty')
+      }
+
+      const token = await getToken()
+      const { data } = await axios.post('/api/order/create', {
+        address: selectedAddress._id,
+        items: cartItemsArray
+      }, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+
+      if (data.success) {
+        initPay(data.order, cartItemsArray);
+      } else {
+        toast.error(data.message)
+      }
+
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
   useEffect(() => {

@@ -2,6 +2,10 @@ import { Inngest } from "inngest";
 import connectDB from "./db";
 import User from "@/models/user";
 import Order from "@/models/order";
+import { Resend } from "resend";
+import { EmailTemplate } from "@/components/EmailTemplate";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const inngest = new Inngest({
   id: "glowcart-next-v2",
@@ -70,7 +74,7 @@ export const createUserOrder = inngest.createFunction(
     triggers: [{ event: "order/created" }], // Changed to array for better compatibility
   },
   async ({ event }) => {
-    const { userId, items, amount, address, date } = event.data;
+    const { userId, items, amount, address, date, paymentMethod, paymentStatus } = event.data;
 
     await connectDB();
     await Order.create({
@@ -79,8 +83,38 @@ export const createUserOrder = inngest.createFunction(
       amount,
       address,
       date,
+      paymentMethod,
+      paymentStatus,
     });
 
+    return { success: true };
+  }
+);
+
+/* ================= SEND ORDER NOTIFICATION ================= */
+export const sendOrderNotification = inngest.createFunction(
+  {
+    id: "send-order-notification",
+    triggers: [{ event: "order/created" }],
+  },
+  async ({ event }) => {
+    const { userId, items, amount, address, paymentMethod } = event.data;
+
+    try {
+      await connectDB();
+      const user = await User.findById(userId);
+
+      if (user && user.email) {
+        await resend.emails.send({
+          from: 'GlowCart <onboarding@resend.dev>',
+          to: user.email,
+          subject: 'Order Confirmation - GlowCart',
+          react: EmailTemplate({ order: { address, items, amount, paymentMethod } }),
+        });
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
     return { success: true };
   }
 );
