@@ -2,10 +2,14 @@ import { Inngest } from "inngest";
 import connectDB from "./db";
 import User from "@/models/user";
 import Order from "@/models/order";
+import Address from "@/models/address";
+import Product from "@/models/Product";
 import { Resend } from "resend";
 import { EmailTemplate } from "@/components/EmailTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+console.log("Inngest Config Initialized - Functions Loaded");
 
 export const inngest = new Inngest({
   id: "glowcart-next-v2",
@@ -98,6 +102,7 @@ export const sendOrderNotification = inngest.createFunction(
     triggers: [{ event: "order/created" }],
   },
   async ({ event }) => {
+    console.log("EVENT RECEIVED: order/created (Email Function)");
     const { userId, items, amount, address, paymentMethod } = event.data;
 
     try {
@@ -105,15 +110,56 @@ export const sendOrderNotification = inngest.createFunction(
       const user = await User.findById(userId);
 
       if (user && user.email) {
-        await resend.emails.send({
+        console.log(`Attempting to send email to: ${user.email}`);
+
+        // Fetch the full address details if it's an ID
+        let fullAddress = address;
+        if (typeof address === 'string') {
+          fullAddress = await Address.findById(address);
+        }
+
+        // Fetch product details for each item if they are just IDs
+        const itemsWithDetails = await Promise.all(items.map(async (item) => {
+          let productDetails = item.product;
+          if (typeof item.product === 'string') {
+            productDetails = await Product.findById(item.product);
+          } else if (item._id && !item.product) {
+            productDetails = await Product.findById(item._id);
+          }
+          
+          return {
+            ...item,
+            product: productDetails || { name: 'Unknown Product' } 
+          };
+        }));
+        
+        // Ensure we have a valid address object for the template
+        const safeAddress = fullAddress || { fullName: 'Customer', area: '', city: '' };
+
+        const { data, error } = await resend.emails.send({
           from: 'GlowCart <onboarding@resend.dev>',
-          to: user.email,
+          to: [user.email],
           subject: 'Order Confirmation - GlowCart',
-          react: EmailTemplate({ order: { address, items, amount, paymentMethod } }),
+          react: EmailTemplate({ 
+            order: { 
+              address: safeAddress, 
+              items: itemsWithDetails, 
+              amount, 
+              paymentMethod 
+            } 
+          }),
         });
+
+        if (error) {
+           console.error("Resend Error:", error);
+        } else {
+           console.log("Resend Success! Email ID:", data.id);
+        }
+      } else {
+        console.log("No user email found in DB for ID:", userId);
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Critical Inngest Email Error:", error);
     }
     return { success: true };
   }

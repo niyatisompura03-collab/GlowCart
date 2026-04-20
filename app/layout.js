@@ -3,6 +3,7 @@ import "./globals.css";
 import { AppContextProvider } from "@/context/AppContext";
 import { Toaster } from "react-hot-toast";
 import { ClerkProvider } from "@clerk/nextjs";
+import ChatBot from "@/components/ChatBot";
 
 const outfit = Outfit({ subsets: ['latin'], weight: ["300", "400", "500"] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <AppContextProvider>
           {children}
         </AppContextProvider>
+        <ChatBot />
       </body>
     </html>
     </ClerkProvider>

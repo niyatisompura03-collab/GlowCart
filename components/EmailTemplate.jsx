@@ -12,53 +12,60 @@ export const EmailTemplate = ({ order }) => (
     borderRadius: '12px',
     backgroundColor: '#ffffff'
   }}>
-    <h1 style={{ color: '#000', textAlign: 'center', fontSize: '24px', marginBottom: '20px' }}>
-        GlowCart
-    </h1>
-    <h2 style={{ fontSize: '20px', color: '#333', marginBottom: '10px' }}>
-      Order Confirmation
+    <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <img 
+          src="https://res.cloudinary.com/dibnkdvve/image/upload/v1776707162/Glowcart-logo_kdpvnj.png" 
+          alt="GlowCart Logo" 
+          style={{ width: '160px', height: 'auto', margin: '0 auto' }}
+        />
+    </div>
+
+    <h2 style={{ fontSize: '20px', color: '#111', marginBottom: '10px', fontWeight: '600' }}>
+      Order Confirmed!
     </h2>
-    <p style={{ fontSize: '16px' }}>Hi {order.address.fullName},</p>
-    <p style={{ fontSize: '16px' }}>
-      Thank you for shopping with us! Your order has been placed successfully and we are preparing it for shipment.
+    <p style={{ fontSize: '15px', color: '#555' }}>Hi {order.address.fullName.split(' ')[0]},</p>
+    <p style={{ fontSize: '15px', color: '#555' }}>
+      Your GlowCart order has been placed successfully. We are getting your items ready for glowing!
     </p>
 
     <div style={{
-      backgroundColor: '#f9f9f9',
-      padding: '20px',
-      borderRadius: '8px',
-      marginTop: '20px',
-      marginBottom: '20px'
+      backgroundColor: '#fafafa',
+      padding: '24px',
+      borderRadius: '12px',
+      marginTop: '24px',
+      border: '1px solid #efefef'
     }}>
-      <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', borderBottom: '1px solid #ddd', paddingBottom: '10px' }}>
-        Order Details
+      <h3 style={{ margin: '0 0 16px 0', fontSize: '17px', color: '#111', borderBottom: '1px solid #eee', paddingBottom: '12px' }}>
+        Order Summary
       </h3>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
-            <th style={{ textAlign: 'left', paddingBottom: '10px' }}>Item</th>
-            <th style={{ textAlign: 'right', paddingBottom: '10px' }}>Qty</th>
+            <th style={{ textAlign: 'left', paddingBottom: '12px', fontSize: '13px', textTransform: 'uppercase', color: '#888' }}>Product</th>
+            <th style={{ textAlign: 'right', paddingBottom: '12px', fontSize: '13px', textTransform: 'uppercase', color: '#888' }}>Qty</th>
           </tr>
         </thead>
         <tbody>
           {order.items.map((item, index) => (
             <tr key={index}>
-              <td style={{ padding: '5px 0', fontSize: '15px' }}>{item.product.name}</td>
-              <td style={{ textAlign: 'right', padding: '5px 0', fontSize: '15px' }}>{item.quantity}</td>
+              <td style={{ padding: '8px 0', fontSize: '14px', fontWeight: '500' }}>
+                {item.product.name}
+              </td>
+              <td style={{ textAlign: 'right', padding: '8px 0', fontSize: '14px' }}>{item.quantity}</td>
             </tr>
           ))}
         </tbody>
       </table>
       
-      <div style={{ borderTop: '1px solid #ddd', marginTop: '15px', paddingTop: '15px' }}>
-        <p style={{ margin: '5px 0', display: 'flex', justifyContent: 'space-between' }}>
-          <span><strong>Total Amount:</strong></span>
-          <span style={{ float: 'right' }}>₹{order.amount}</span>
-        </p>
-        <p style={{ margin: '5px 0', display: 'flex', justifyContent: 'space-between' }}>
-          <span><strong>Payment Method:</strong></span>
-          <span style={{ float: 'right' }}>{order.paymentMethod}</span>
-        </p>
+      <div style={{ borderTop: '1px solid #eee', marginTop: '16px', paddingTop: '16px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+          <span style={{ fontSize: '14px', color: '#555' }}>Total Amount:</span>
+          <span style={{ fontWeight: '700', fontSize: '16px', float: 'right' }}>₹{order.amount}</span>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span style={{ fontSize: '14px', color: '#555' }}>Payment:</span>
+          <span style={{ fontWeight: '500', fontSize: '14px', float: 'right', color: '#008a00' }}>{order.paymentMethod}</span>
+        </div>
       </div>
     </div>
 
