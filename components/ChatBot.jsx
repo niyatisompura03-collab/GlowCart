@@ -2,6 +2,7 @@
 
 import { MessageCircle, X, Send, Sparkles, User, Bot, Loader2 } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,28 +64,33 @@ export default function ChatBot() {
         // Chunks look like: 0:"content"\n or d:{"finishReason":"stop"...}
         const lines = chunk.split('\n');
         for (const line of lines) {
-          if (!line.trim()) continue;
+          if (!line) continue;
 
           // 1. Check for standard Vercel AI Protocol (0:"text")
           const protocolMatch = line.match(/^0:"(.*)"$/);
           if (protocolMatch && protocolMatch[1]) {
             try {
+              // Extract the inner string and handle escaped newlines
               const text = JSON.parse(`"${protocolMatch[1]}"`);
               fullContent += text;
-              continue;
-            } catch (e) {}
+            } catch (e) {
+              // Fallback if JSON.parse fails (it shouldn't for simple text)
+              fullContent += protocolMatch[1].replace(/\\n/g, '\n');
+            }
+            continue;
           }
 
           // 2. Check for Error protocols (3: or e:)
           if (line.startsWith('3:') || line.startsWith('e:')) {
-            fullContent = "Chat Error: " + line.substring(2);
+            const errorMatch = line.match(/^[3e]:"(.*)"$/);
+            fullContent = "Chat Error: " + (errorMatch ? errorMatch[1] : line.substring(2));
             done = true;
             break;
           }
 
-          // 3. Fallback: If it's a raw text chunk without any prefix
-          if (!line.includes(':') || line.length > 50) {
-            fullContent += line;
+          // 3. Raw text fallback (handle potential leftover data)
+          if (!line.match(/^[0-9a-z]:/i)) {
+            fullContent += line + (line.length > 0 ? '\n' : '');
           }
         }
         
@@ -194,9 +200,25 @@ export default function ChatBot() {
                   <div className={`p-3.5 rounded-2xl text-[14px] leading-relaxed shadow-sm ${
                     m.role === 'user' 
                       ? 'bg-orange-500 text-white rounded-tr-none' 
-                      : 'bg-white text-gray-700 border border-gray-100 rounded-tl-none font-medium'
+                      : 'bg-white text-gray-700 border border-gray-100 rounded-tl-none font-medium prose prose-sm max-w-none'
                   }`}>
-                    {m.content}
+                    {m.role === 'user' ? (
+                      m.content
+                    ) : (
+                      <div className="markdown-content">
+                        <ReactMarkdown 
+                          components={{
+                            p: ({node, ...props}) => <p className="mb-3 last:mb-0" {...props} />,
+                            ul: ({node, ...props}) => <ul className="list-disc ml-5 mb-3 space-y-1" {...props} />,
+                            ol: ({node, ...props}) => <ol className="list-decimal ml-5 mb-3 space-y-1" {...props} />,
+                            li: ({node, ...props}) => <li className="pl-1" {...props} />,
+                            strong: ({node, ...props}) => <strong className="font-bold text-gray-900" {...props} />,
+                          }}
+                        >
+                          {m.content}
+                        </ReactMarkdown>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

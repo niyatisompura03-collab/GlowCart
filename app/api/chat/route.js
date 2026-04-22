@@ -38,7 +38,10 @@ export async function POST(req) {
       ${productContext}
       
       Instructions:
-      - Use the catalog for recommendations. 
+      - ALWAYS use clear Markdown formatting.
+      - Use bullet points for product lists.
+      - Use bold text for product names.
+      - Use double newlines between paragraphs for clear spacing.
       - If empty, give general beauty advice and mention we're updating stock.
       - Never hallucinate products not in the list.
     `;

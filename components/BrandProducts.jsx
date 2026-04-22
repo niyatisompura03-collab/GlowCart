@@ -6,17 +6,13 @@ import { assets } from '@/assets/assets';
 import Image from 'next/image';
 
 const BrandProducts = ({ brandFilter, pageTitle }) => {
-  const { products, router } = useAppContext()
+  const { products, router, search } = useAppContext()
   
   // Filter products where the product ID roughly correlates to the brand or brand name
   const filteredProducts = products.filter(product => {
-    // We'll use the id name if it contains the brand
-    if (product._id && product._id.includes(brandFilter)) return true;
-    
-    // Otherwise check product name
-    if (product.name && product.name.toLowerCase().includes(brandFilter.toLowerCase())) return true;
-    
-    return false;
+    const matchesBrand = (product._id && product._id.includes(brandFilter)) || (product.name && product.name.toLowerCase().includes(brandFilter.toLowerCase()));
+    const matchesSearch = product.name.toLowerCase().includes(search.toLowerCase());
+    return matchesBrand && matchesSearch;
   })
 
   return (
