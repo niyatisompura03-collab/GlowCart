@@ -50,8 +50,8 @@ const AboutPage = () => {
                     <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
                          <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
                          <Image 
-                            src={assets.girl_with_headphone_image} 
-                            alt="Beauty Community" 
+                            src={assets.about_us_image} 
+                            alt="Premium Beauty" 
                             fill 
                             className="object-cover transition-transform duration-700 group-hover:scale-110" 
                         />

@@ -39,6 +39,7 @@ import mac_lipstick from "./mac_lipstick.png";
 import mars_nail_paint from "./mars_nail_paint.png";
 import pixi_blush from "./pixi_blush.png";
 import plum_face_wash from "./plum_face_wash.png";
+import about_us_image from "./about_us_image.png";
 
 import auth_bg from "./auth_bg.png";
 import laneige_1 from "./laneige_1.jpg";
@@ -108,7 +109,8 @@ export const assets = {
   rare_beauty_brightener,
   rare_beauty_liner,
   tirtir_red_cushion,
-  laneige_water_mask
+  laneige_water_mask,
+  about_us_image
 };
 
 export const BagIcon = () => {
